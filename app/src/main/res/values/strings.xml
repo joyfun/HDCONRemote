@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Remote</string>
+    <string name="action_settings">Settings</string>
+    <string name="wizard_manual_configuration">Manual configuration</string>
+    <string name="wizard_manual_configuration_message">Enter your media center configuration:</string>
+    <string name="wizard_manual_configuration_message_advanced">Advanced configuration (leave blank for defaults)</string>
+    <string name="wizard_xbmc_name">Media center name</string>
+    <string name="wizard_xbmc_ip">Address</string>
+    <string name="wizard_xbmc_port">Port</string>
+    <string name="wizard_xbmc_username">Username</string>
+    <string name="wizard_xbmc_password">Password</string>
+    <string name="wizard_xbmc_tcp_port">TCP port (9090)</string>
+    <string name="wizard_xbmc_mac_address">MAC address</string>
+    <string name="wizard_xbmc_wol_port">WoL port (9)</string>
+    <string name="wizard_xbmc_use_tcp">Use TCP</string>
+    <string name="wizard_xbmc_event_server_port">ES Port (9777)</string>
+    <string name="wizard_xbmc_use_event_server">Use EventServer</string>
+    <string name="action_find_controllers">Find controllers</string>
+
+    <string name="controller_url">Controller URL</string>
+    <string name="controller_port">port</string>
+
+    <string name="connect_automatically">Connect automatically</string>
+    <string name="connect">Connect</string>
+    <string name="find_controllers">Find controllers</string>
+</resources>
