@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="operateLayout" type="id" />
+    <item name="upButton" type="id" />
+    <item name="downButton" type="id" />
+    <item name="add2Button" type="id" />
+    <item name="minu2Button" type="id" />
+    <item name="okButton" type="id" />
+    <item name="displayLayout" type="id" />
+</resources>

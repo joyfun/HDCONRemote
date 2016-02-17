@@ -8,5 +8,13 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/first_ctrl" tools:context=".CtrlActivity">
+
+    <RelativeLayout  android:id="@id/operateLayout" android:layout_width="@dimen/dimen_size_s200" android:layout_height="@dimen/dimen_size_s200" android:layout_marginTop="@dimen/dimen_size_s50" android:layout_below="@id/displayLayout" android:layout_centerHorizontal="true">
+        <ImageButton android:id="@id/upButton" android:tag="tv_up" android:background="@drawable/tv_upbutton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:contentDescription="向上" />
+        <ImageButton android:id="@id/downButton" android:tag="tv_down" android:background="@drawable/tv_downbutton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:contentDescription="向下" />
+        <ImageButton android:id="@id/add2Button" android:tag="tv_right" android:background="@drawable/tv_add_t_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="向右" />
+        <ImageButton android:id="@id/minu2Button" android:tag="tv_left" android:background="@drawable/tv_minu_t_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:contentDescription="向左" />
+        <ImageButton android:id="@id/okButton" android:tag="tv_ok" android:background="@drawable/tv_okbutton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:contentDescription="OK" />
+    </RelativeLayout>
     </RelativeLayout>
 

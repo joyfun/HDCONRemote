@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by joyfun on 11/15/15.
@@ -20,6 +22,7 @@ public class Post {
     public static boolean auth;
     public static String url;
     public static int port;
+    static Timer timer=null;
     public static void  connect(){
         Log.e("app", "send start ");
         try {
@@ -58,6 +61,8 @@ public class Post {
 
     }
     public static void sendKey(int key,boolean press) throws IOException {
+       // Log.e("app","111Press Key"+key);
+
         getConnect();
         try{
 
@@ -72,7 +77,9 @@ public class Post {
             output.writeInt(7);
 
         }
-        output.flush();
+       //     Log.e("app","222Press Key"+key);
+
+            output.flush();
         }catch(SocketException se){
             Log.e("app","connect timeout");
         }
@@ -101,12 +108,39 @@ public class Post {
                 s = new Socket(url, port);
                 input = new DataInputStream(s.getInputStream());
                 output=new DataOutputStream(s.getOutputStream());
+                Post.auth("888888");
+    if(null==timer){
+        timer  =new Timer();
+        timer.schedule(new TimerTask(){
+
+            @Override
+            public void run() {
+                try {
+                    Post.keepLive();
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        },1000,10000);
+    }
+
             }
             Log.e("app", "connect  complete ");
 
         } catch (Exception e) {
            Log.e("error", e.toString());
         }
+    }
+    public static boolean auth(String password) throws IOException {
+        try {
+        output.writeInt(password.length()+1);
+        output.writeInt(Consts.Comm_Password_Verify_Request);
+        output.write((password+"\0").getBytes());
+        } catch (Exception e) {
+            Log.e("error", e.toString());
+        }
+        return true;
     }
     public static DataInputStream getInput(){
         getConnect();

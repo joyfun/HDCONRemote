@@ -73,8 +73,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 SendfeedbackJob job = new SendfeedbackJob();
                 job.execute(new String[]{Consts.Key_Escape+"", ""});
-                ReceiveJob recive = new ReceiveJob();
-                recive.execute();
+
                 Vibrator vibrator=(Vibrator)getSystemService(Service.VIBRATOR_SERVICE);
                 vibrator.vibrate(new long[]{0, 100}, -1);
 

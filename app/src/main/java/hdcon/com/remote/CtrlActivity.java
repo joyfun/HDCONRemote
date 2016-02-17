@@ -13,12 +13,15 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import java.lang.reflect.Field;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class CtrlActivity extends AppCompatActivity {
-
+ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,7 @@ public class CtrlActivity extends AppCompatActivity {
         int port =share.getInt("port", 12345);
         Log.e("config", url);
         Post.config(url, port);
+
 //        Button backBtn = (Button) findViewById(R.id.Key_Escape);
 //        backBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -45,6 +49,9 @@ public class CtrlActivity extends AppCompatActivity {
 //        });
 
         RelativeLayout contentLayout = (RelativeLayout) getLayoutInflater().inflate(R.layout.content_main, null);
+        imageView= (ImageView) findViewById(R.id.imageView);
+//        ReceiveJob recive = new ReceiveJob(this);
+//        recive.execute();
         for (int i = 0; i < contentLayout.getChildCount(); i++) {
             View v = contentLayout.getChildAt(i);
             if ( v instanceof Button){
@@ -52,7 +59,7 @@ public class CtrlActivity extends AppCompatActivity {
                 String btnName=v.getResources().getResourceName(v.getId()).split("/")[1];
 
                 if(true){
-                    Log.e("key", btnName);
+                    Log.e("key ", btnName);
                     Button keybutton = (Button) findViewById(v.getId());
 
                     keybutton.setOnTouchListener(new View.OnTouchListener() {
@@ -67,11 +74,11 @@ public class CtrlActivity extends AppCompatActivity {
                                 //job.execute(new String[]{keyCode + "", ""});
                                 if (event.getAction() == android.view.MotionEvent.ACTION_DOWN) {
                                     job.execute(new String[]{keyCode + "", ""});
-                                    Log.e("key",keyName+"key Press");
+                                    Log.e("key1_",keyName+"_"+keyCode+"key Press");
 
                                 } else if (event.getAction() == android.view.MotionEvent.ACTION_UP) {
                                     job.execute(new String[]{keyCode + "", "0"});
-                                    Log.e("key", keyName+"key release");
+                                    Log.e("key2_", keyName+"_"+keyCode+"key release");
 
                                 }
                                 Vibrator vibrator = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
@@ -79,7 +86,7 @@ public class CtrlActivity extends AppCompatActivity {
 
                             }
                                 catch(Exception e){
-
+                                   e.printStackTrace();
                                 }
 
                                 return true;

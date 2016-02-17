@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -13,7 +14,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/imageView"
-        android:src="@drawable/bg"
+        android:background="@drawable/bg"
         android:scaleType="fitXY"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
@@ -39,72 +40,70 @@
         android:layout_height="wrap_content"
         android:text="F3"
         android:id="@+id/Key_F3"
+        android:width="120dp"
         android:layout_alignTop="@+id/Key_Escape"
         android:layout_alignParentEnd="true"
         android:textColor="@android:color/transparent"
         android:background="@android:color/transparent" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:id="@+id/Key_Enter"
+        android:layout_marginTop="93dp"
+        android:height="80dp"
+        android:width="100dp"
+        android:layout_below="@+id/Key_F3"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/transparent"
+        android:background="@android:color/transparent"/>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Left"
         android:id="@+id/Key_Left"
-        android:visibility="visible"
-        android:enabled="true"
-        android:width="120dp"
+        android:layout_alignTop="@+id/Key_Enter"
+        android:layout_toStartOf="@+id/Key_Enter"
+        android:layout_alignBottom="@+id/Key_Enter"
         android:background="@android:color/transparent"
-        android:textColor="@android:color/transparent"
-        android:layout_alignTop="@+id/Key_Right"
-        android:layout_alignParentStart="true" />
+        android:textColor="@android:color/transparent" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Right"
         android:id="@+id/Key_Right"
+        android:layout_alignBottom="@+id/Key_Enter"
+        android:layout_toEndOf="@+id/Key_Enter"
+        android:layout_alignTop="@+id/Key_Enter"
         android:textColor="@android:color/transparent"
-        android:background="@android:color/transparent"
-        android:singleLine="true"
-        android:layout_marginBottom="21dp"
-        android:layout_above="@+id/Key_Down"
-        android:layout_toEndOf="@+id/Key_Down" />
+        android:background="@android:color/transparent"/>
 
     <Button
-        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Up"
         android:id="@+id/Key_Up"
-        android:visibility="visible"
-        android:enabled="true"
-        android:width="120dp"
-        android:background="@android:color/transparent"
-        android:textColor="@android:color/transparent"
         android:layout_above="@+id/Key_Left"
-        android:layout_toEndOf="@+id/Key_Left"
-        android:layout_marginBottom="25dp" />
+        android:height="80dp"
+        android:layout_alignStart="@+id/Key_Enter"
+        android:layout_toStartOf="@+id/Key_Right"
+        android:textColor="@android:color/transparent"
+        android:background="@android:color/transparent"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Down"
         android:id="@+id/Key_Down"
+        android:layout_below="@+id/Key_Enter"
+        android:layout_alignEnd="@+id/Key_Up"
+        android:height="80dp"
+        android:layout_alignStart="@+id/Key_Enter"
         android:textColor="@android:color/transparent"
-        android:background="@android:color/transparent"
-        android:singleLine="true"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/Key_Escape" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OK"
-        android:id="@+id/Key_Enter"
-        android:textColor="@android:color/transparent"
-        android:background="@android:color/transparent"
-        android:layout_below="@+id/Key_Up"
-        android:layout_centerHorizontal="true" />
+        android:background="@android:color/transparent"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -115,10 +114,10 @@
         android:background="@android:color/transparent"
         android:singleLine="true"
         android:layout_marginLeft="82dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="42dp"
         android:layout_below="@+id/Key_Down"
-        android:layout_alignEnd="@+id/Key_Enter"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="25dp" />
+        android:layout_alignEnd="@+id/Key_Down" />
 
     <Button
         android:layout_width="wrap_content"
@@ -128,10 +127,9 @@
         android:textColor="@android:color/transparent"
         android:background="@android:color/transparent"
         android:singleLine="true"
-        android:layout_marginLeft="82dp"
-        android:layout_alignBaseline="@+id/Key_F1"
-        android:layout_alignBottom="@+id/Key_F1"
-        android:layout_toStartOf="@+id/Key_F3" />
+        android:layout_marginLeft="2dp"
+        android:layout_alignTop="@+id/Key_F1"
+        android:layout_toEndOf="@+id/Key_F10" />
 
     <Button
         android:layout_width="wrap_content"
@@ -149,17 +147,15 @@
         android:layout_alignStart="@+id/Key_Escape" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:text="F5"
         android:id="@+id/Key_F5"
         android:textColor="@android:color/transparent"
         android:background="@android:color/transparent"
         android:singleLine="true"
-        android:layout_marginLeft="82dp"
-        android:layout_alignBaseline="@+id/Key_F10"
-        android:layout_alignBottom="@+id/Key_F10"
-        android:layout_marginStart="18dp"
-        android:layout_alignEnd="@+id/Key_Right" />
+        android:layout_marginLeft="16dp"
+        android:layout_alignTop="@+id/Key_F10"
+        android:layout_toEndOf="@+id/Key_F10" />
 
 </RelativeLayout>

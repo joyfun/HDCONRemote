@@ -8,10 +8,11 @@ public class Consts {
    public static final int Comm_Password_Verify_Result=101;		//返回密码校验结果
    public static final int Comm_Key_Event=102;						//键值输入
    public static final int Comm_Key_Call_Result=103;					//呼叫结果	后续包int类型，非0成功
-    public static final int Comm_Key_End_Call_Result=104;				//挂断结果	后续包int类型，非0成功
-    public static final int Comm_Live=105	;						//发送live包
-    public static final int Comm_Live_Answer=106;						//回复live包
-    public static final int Comm_Other_Connected=107;
+   public static final int Comm_Key_End_Call_Result=104;				//挂断结果	后续包int类型，非0成功
+   public static final int Comm_Live=105	;
+   public static final int  Comm_Live_Answer_Begined=106;//回复live包
+   public static final int  Comm_Live_Answer_UnBegin=107;//回复live包	 //回复live包
+   public static final int  Comm_Other_Connected=108;
 
     public static final int Key_F1 = 0x01000030 ;
     public static final int Key_F2 = 0x01000031 ;
