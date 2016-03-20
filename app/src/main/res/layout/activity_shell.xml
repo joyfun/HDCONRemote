@@ -36,12 +36,13 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/controllerPort"
+                android:id="@+id/controllerPasswd"
                 android:inputType="textUri"
-                android:hint="@string/controller_port"
+                android:hint="@string/controller_passwd"
                 android:backgroundTint="@color/light_green" android:textColor="@color/white"
                 android:textColorHighlight="@color/white" android:textColorHint="@color/light_grey"
-                android:textColorLink="@color/white"/>
+                android:textColorLink="@color/white"
+                android:password="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -65,8 +66,8 @@
                     android:textColor="@color/medium_grey" android:textStyle="bold"
                     android:textColorHighlight="@color/white"
                     android:enabled="true" android:backgroundTint="@color/light_green"
-                android:focusable="true"
-                android:focusableInTouchMode="true" />
+                    android:focusable="true"
+                 />
 
         </LinearLayout>
     </LinearLayout>

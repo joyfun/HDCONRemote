@@ -7,7 +7,7 @@ public class SendfeedbackJob extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String[] params) {
-        Post.connect();
+        Post.getConnect();
         // do above Server call here
         return "some message";
     }

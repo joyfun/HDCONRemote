@@ -44,7 +44,8 @@ public class ReceiveJob extends AsyncTask<String, Void, String> {
                     int length=input.readInt();
                     int type=input.readInt();
                     msg=msg+type;
-                   switch (type){
+                    Log.e("return", "type" + type + "  length" + length );
+                    switch (type){
                        case Consts.Comm_Live_Answer_Begined:;
                        case Consts.Comm_Live_Answer_UnBegin:Log.e("lie","Keep Alive");break;
                        case Consts.Comm_Password_Verify_Result:if(input.readInt()!=0){
@@ -53,7 +54,6 @@ public class ReceiveJob extends AsyncTask<String, Void, String> {
                        };break;
                        };
 
-                    Log.e("return", "type" + type + "  length" + length );
                 }
             if(auth){
          //       Post.keepLive();

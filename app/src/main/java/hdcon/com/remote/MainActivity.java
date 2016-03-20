@@ -29,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         String url =share.getString("url", "");
         int port =share.getInt("port", 12345);
+        int passwd=share.getInt("passwd",888888);
         Log.e("config",url);
-        Post.config(url,port);
+        Post.config(url,port,"888888");
 
         RelativeLayout contentLayout = (RelativeLayout) getLayoutInflater().inflate(R.layout.activity_main, null);
         for (int i = 0; i < contentLayout.getChildCount(); i++) {

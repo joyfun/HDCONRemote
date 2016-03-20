@@ -19,6 +19,7 @@
 
     <string name="controller_url">Controller URL</string>
     <string name="controller_port">port</string>
+    <string name="controller_passwd">password</string>
 
     <string name="connect_automatically">Connect automatically</string>
     <string name="connect">Connect</string>
